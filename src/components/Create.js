@@ -15,6 +15,7 @@ const Create = () => {
       name: name,
       email: email
     })
+    //using navigation to move read page after data post
       .then(() => {
         history('/read')
       })
@@ -35,6 +36,7 @@ const Create = () => {
           <input
             type="text"
             className="form-control"
+            // using onChange method to captured data from user and set to setName 
             onChange={(e) => setName(e.target.value)}
           />
         </div>
@@ -43,7 +45,6 @@ const Create = () => {
           <input
             type="email"
             className="form-control"
-            aria-describedby="emailHelp"
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>

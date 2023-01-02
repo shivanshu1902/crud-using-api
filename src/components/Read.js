@@ -9,12 +9,14 @@ const Read = () => {
         axios.get('https://63abde3ccf281dba8c2c35d3.mockapi.io/crud-HM')
             .then((res) => {
                 // console.log(res.data);
+                //set state from getting data through api
                 setData(res.data)
             });
     }
 
     function handleDelete(id) {
         axios.delete(`https://63abde3ccf281dba8c2c35d3.mockapi.io/crud-HM/${id}`)
+        // after deletion re render getData function to getting updated data in api
             .then(() => {
                 getData()
             })
@@ -26,6 +28,7 @@ const Read = () => {
         localStorage.setItem("email", email)
     }
 
+    //useEffect use because when state change automatically useeffect call getData function
     useEffect(() => {
         getData();
     }, [])
